@@ -4,8 +4,12 @@
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.6.9",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -15,5 +19,17 @@
     "eject": "react-scripts eject"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

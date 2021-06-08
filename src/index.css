@@ -1,6 +1,6 @@
 @font-face{
   font-family: 'Roboto-Regular';  
-  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+/*  src: url('/fonts/Roboto-Regular.ttf') format('truetype');*/
   font-weight: normal;
   font-style: normal;
 }
@@ -37,7 +37,7 @@ a {
 .header_bgr_test {
     position: relative;
     /*min-height: 100vh;*/
-    background-image: url("/img/London.jpg");
+/*    background-image: url("/img/London.jpg");*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: 50%;
@@ -238,7 +238,7 @@ a {
 .header_bgr {
     position: relative;
     /*min-height: 100vh;*/
-    background-image: url("/img/London.jpg");
+/*    background-image: url("/img/London.jpg");*/
     background-repeat: no-repeat;
     background-size: cover;
     background-position-x: 50%;

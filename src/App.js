@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+//import { connect } from 'react-redux';
 import './App.css';
 
 //import {Global} from 'Global.js';
@@ -12,29 +12,13 @@ import {FooterSite} from 'FooterSite.js';
 
 //import {GlobVar, global} from 'Global.js';
 
-let global = Global();
+//let global = Global();
 
 //let GlobVar = React.createContext({global});
 
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      itemMenu1: "", // TESTS, WORDS, LISTEN, PHRASES, JOKES
-      itemMenu2: ""  // TEST2 or SPORT or ...
-    };
-  }
+function App() {
 
-  handleClick(item1,item2) {
-    this.setState(
-      {itemMenu1: item1,
-       itemMenu2: item2
-      }   
-    );
-  }
-
-  render() {
     return (
       <>
         <HeaderBgrTest />
@@ -46,8 +30,8 @@ class App extends React.Component {
         <FooterSite />
       </>
     )
-  }
 }
+export default App;
 
 
   
