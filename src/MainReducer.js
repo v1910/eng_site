@@ -1,5 +1,9 @@
 //MainReducer.js -----------
 
+import React from "react"
+import ReactDOM from 'react-dom';
+
+
 // state--
 let initialStore = 
 {
@@ -69,11 +73,18 @@ let initialStore =
 	// menu
     itemMenu1: "", // TESTS, WORDS, LISTEN, PHRASES, JOKES
     itemMenu2: "",  // TEST2 or SPORT or ...
+	
 	visible_tests: 'hidden',
 	visible_words: 'hidden',
 	visible_listen: 'hidden',
 	visible_phrases: 'hidden',
-	visible_jokes: 'hidden'
+	visible_jokes: 'hidden',
+
+	value_tests: 'empty',
+	value_words: 'empty',
+	value_listen: 'empty',
+	value_phrases: 'empty',
+	value_jokes: 'empty'
 	
 }//end of initialStore-------
 
@@ -83,25 +94,43 @@ let initialStore =
 // Reducer
 
 function MainReducer(state = initialStore, action) {
-
-	switch(state.type){
+	console.log('MainReducer 1: ', action);
+	switch(action.type){
 		case 'SHOW_TESTS_MENU':
-			document.getElementById('list_words_wrapper').style.visibility = 'hidden';
-			document.getElementById('list_listen_wrapper').style.visibility = 'hidden';
-			document.getElementById('list_phrases_wrapper').style.visibility = 'hidden';
-			document.getElementById('list_jokes_wrapper').style.visibility = 'hidden';
-		    document.getElementById('list_tests_wrapper').style.visibility = 'visible';
+			console.log('MainReducer: SHOW_TESTS_MENU');
 			return{
 				...state,
 				visible_tests: 'visible',
 				visible_words: 'hidden',
 				visible_listen: 'hidden',
 				visible_phrases: 'hidden',
-				visible_jokes: 'hidden'
+				visible_jokes: 'hidden',
+				value_tests: 'empty',
+				value_words: 'empty',
+				value_listen: 'empty',
+				value_phrases: 'empty',
+				value_jokes: 'empty'
+				
 			}
+		case 'SHOW_WORDS_MENU':
+				console.log('MainReducer: SHOW_WORDS_MENU');
+			return{
+				...state,
+				visible_tests: 'hidden',
+				visible_words: 'visible',
+				visible_listen: 'hidden',
+				visible_phrases: 'hidden',
+				visible_jokes: 'hidden',
+				value_tests: 'empty',
+				value_words: 'empty',
+				value_listen: 'empty',
+				value_phrases: 'empty',
+				value_jokes: 'empty'
+					
+			}			
 			default:
 				return state;
-	}
+	}//switch
 
 /*    
     if (cmd.type === 'ADD_PU') {
