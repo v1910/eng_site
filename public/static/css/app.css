@@ -713,6 +713,13 @@ a {
   visibility: hidden;
 }  
 
+#list_jokes_wrapper {
+  width: 30px;
+  padding-left: 2px;
+  font-size: 11px;
+  visibility: hidden;
+}  
+
 #button_play_cont {
   margin-top: 10px;
   margin-bottom: 10px;

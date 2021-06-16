@@ -1,3 +1,5 @@
+//App.js------------------
+
 import React from 'react';
 
 import {HeaderBgrTest} from 'HeaderBgrTest.js';
@@ -15,11 +17,9 @@ function App() {
         <section id="listen_wrapper"></section>
         <section id="phrases_wrapper"></section>
         <section id="jokes_wrapper"></section>
-        <FooterSite />
+        <FooterSite />  
       </>
     )
 
 }
 export default App;
-
-  
