@@ -89,8 +89,6 @@ let initialStore =
 }//end of initialStore-------
 
 
-
-
 // Reducer
 
 function MainReducer(state = initialStore, action) {
@@ -100,8 +98,8 @@ function MainReducer(state = initialStore, action) {
 			console.log('MainReducer: SHOW_TESTS_MENU');
 			return{
 				...state,
-				visible_tests: 'visible',
-				visible_words: 'hidden',
+				visible_tests: action.visible_tests,
+				visible_words: action.visible_words,
 				visible_listen: 'hidden',
 				visible_phrases: 'hidden',
 				visible_jokes: 'hidden',
@@ -132,39 +130,8 @@ function MainReducer(state = initialStore, action) {
 				return state;
 	}//switch
 
-/*    
-    if (cmd.type === 'ADD_PU') {
-        let id_pu = store.id_pu;  
-        let new_store;
-        new_store = store;
-        return new_store;
-    }
-  
-    if (cmd.type === 'EDIT_PU') {
-        
-        let new_store;
-        new_store = store;
-        return new_store;
-    };
-    
-    if (cmd.type === 'REMOVE_PU') {
-        let new_store;
-        store.splice(cmd.id_pu,1);
-        new_store = store;
-        return new_store;
-    }
-
-    if (cmd.type === 'SAVE_PU') {
-        console.log('createRedux: SAVE_PU cmd=',cmd);
-        let new_store = cmd.prod;
-        console.log('createRedux: SAVE_PU new_store=',new_store);
-        return new_store;
-    }
-*/     
+   return store;
 };//end of MainReducer -----------------------
-
-
-//let store = createStore(reducer);
 
 export default MainReducer;
 
