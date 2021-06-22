@@ -1,6 +1,8 @@
 //MainReducer.js-----------------------------
 // It is the store of the site
 
+import React from "react";
+
 import {AllTests} from 'AllTests.js';
 
 import {CorrectAnswersTests} from 'CorrectAnswersTests.js';
@@ -12,6 +14,7 @@ import {APPEARANCEwords} from "appearance_words.js";
 import {PREPOSITIONSwords} from "prepositions_words.js";
 import {NATUREwords} from "nature_words.js";
 import {Jokes} from "jokes.js";
+import { insertAfter } from "insertAfter.js";
 
 let workAllTest = AllTests(); // read all tests
 //let workTest = workAllTest[0].length; // amount of questions in current test
@@ -106,43 +109,53 @@ initialStore.nJokes = workInitialStore.jokes_arr.length // amount of all jokes
 
 function MainReducer(state = initialStore, action){
     console.log('MainReducer: action=',action);
-    console.log('MainReducer: store=',state);
+    console.log('MainReducer: state=',state);
 
     switch(action.type) {
         case 'SET_TESTS':
 console.log('MainReducer: SET_TESTS 222222222222');            
-/* 
-            if(!(document.getElementById('tests_wrapper') === null))
+console.log('MainReducer: document.getElementById(tests_wrapper)=', document.getElementById('tests_wrapper'));
+ 
+            if(!((document.getElementById('tests_wrapper') === 'underfined') || (document.getElementById('tests_wrapper') === null))){
                 document.getElementById('tests_wrapper').value = '';
-               
-            if(!(document.getElementById('words_wrapper') === null))                 
+            } else {
+/*                
+                HeaderBgrTestLondon();
+                let section_tests_wrapper = document.createElement('SECTION');
+                section_tests_wrapper.value = '';
+                section_tests_wrapper.setAttribute("id", "tests_wrapper");
+                let section_tests_wrapper_work = document.getElementById("london_bgr");
+                console.log('MainReducer: section_tests_wrapper_work=', section_tests_wrapper_work);
+*/                
+//                insertAfter(section_tests_wrapper, section_tests_wrapper_work);
+            }
+                
+            if(!((document.getElementById('words_wrapper') === 'underfined') || (document.getElementById('words_wrapper') === null)))               
                 document.getElementById('words_wrapper').value = '';
-            if(!(document.getElementById('listen_wrapper') === null))
+            if(!((document.getElementById('listen_wrapper') === 'underfined') || (document.getElementById('listen_wrapper') === null)))               
                 document.getElementById('listen_wrapper').value = '';
-            if(!(document.getElementById('phrases_wrapper') === null))
+            if(!((document.getElementById('phrases_wrapper') === 'underfined') || (document.getElementById('phrases_wrapper') === null)))               
                 document.getElementById('phrases_wrapper').value = '';
-            if(!(document.getElementById('jokes_wrapper') === null))
+            if(!((document.getElementById('jokes_wrapper') === 'underfined') || (document.getElementById('jokes_wrapper') === null)))               
                 document.getElementById('jokes_wrapper').value = '';
-
-         
-            if(!(document.getElementById('list_words_wrapper') === null))
-                document.getElementById('list_words_wrapper').style.visibility = 'hidden';
-            if(!(document.getElementById('list_listen_wrapper') == null))
-                document.getElementById('list_listen_wrapper').style.visibility = 'hidden';
-            if(!(document.getElementById('list_phrases_wrapper') == null))
-                document.getElementById('list_phrases_wrapper').style.visibility = 'hidden';
+            if(!((document.getElementById('list_words_wrapper') === 'underfined') || (document.getElementById('list_words_wrapper') === null)))                        
+                document.getElementById('list_words_wrapper').style.visibility = action.list_words_wrapper;
+            if(!((document.getElementById('list_listen_wrapper') === 'underfined') || (document.getElementById('list_listen_wrapper') === null)))               
+                document.getElementById('list_listen_wrapper').style.visibility = action.list_listen_wrapper;
+            if(!((document.getElementById('list_phrases_wrapper') === 'underfined') || (document.getElementById('list_phrases_wrapper') === null)))               
+                document.getElementById('list_phrases_wrapper').style.visibility = action.list_listen_wrapper;
                 
 //console.log("document.getElementById=",document.getElementById('list_jokes_wrapper'));            
 
 //            if(!(document.getElementById('list_jokes_wrapper').style.visibility == undefined))
 //                document.getElementById('list_jokes_wrapper').style.visibility = 'hidden';
-            if(!(document.getElementById('list_tests_wrapper') == null))
-                document.getElementById('list_tests_wrapper').style.visibility = 'visible';
-*/               
+            if(!((document.getElementById('list_tests_wrapper') === 'underfined') || (document.getElementById('list_tests_wrapper') === null)))               
+                document.getElementById('list_tests_wrapper').style.visibility = action.list_listen_wrapper;
+               
             return {      
                 ...state,
-                state_Tests: action.setStateTests,
-                state_edit: action.stateEdit,
+                state_tests: action.state_tests,
+                state_edit: action.state_edit,
                 stateWords: "empty",
                 stateListen: "empty",
                 statePhrases: "empty",
@@ -210,8 +223,10 @@ console.log('MainReducer: SET_TESTS 222222222222');
 
     } //switch
 
-//    return state;
-}; //MainReducer
+//    return state;   
+   
+
+}; //end of MainReducer---------------------------
 
 
 export default MainReducer;
