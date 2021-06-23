@@ -23,6 +23,7 @@ let initialStore =
 
 {
 	//initialisation -----------
+    list_tests_wrapper: 'hidden', // show or hide list_tests_wrapper
     state_tests: [],
     state_edit: true,
     stateTests: "empty",
@@ -149,12 +150,16 @@ console.log('MainReducer: document.getElementById(tests_wrapper)=', document.get
 
 //            if(!(document.getElementById('list_jokes_wrapper').style.visibility == undefined))
 //                document.getElementById('list_jokes_wrapper').style.visibility = 'hidden';
-            if(!((document.getElementById('list_tests_wrapper') === 'underfined') || (document.getElementById('list_tests_wrapper') === null)))               
-                document.getElementById('list_tests_wrapper').style.visibility = action.list_listen_wrapper;
+            if(!((document.getElementById('list_tests_wrapper') === 'underfined') || (document.getElementById('list_tests_wrapper') === null))){
+                document.getElementById('list_tests_wrapper').style.visibility = action.list_tests_wrapper;
+                console.log('MainReducer: action.list_tests_wrapper=',action.list_tests_wrapper);
+            }               
+                
                
             return {      
                 ...state,
                 state_tests: action.state_tests,
+                list_tests_wrapper: action.list_tests_wrapper,
                 state_edit: action.state_edit,
                 stateWords: "empty",
                 stateListen: "empty",
