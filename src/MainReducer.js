@@ -155,7 +155,10 @@ console.log('MainReducer: document.getElementById(tests_wrapper)=', document.get
                 console.log('MainReducer: action.list_tests_wrapper=',action.list_tests_wrapper);
             }               
                 
-               
+            const obj = document.getElementById("list_tests_wrapper");
+            console.log('ListTestsWrapper: obj=', obj);
+            console.log('ListTestsWrapper: action.list_tests_wrapper=', action.list_tests_wrapper);            
+
             return {      
                 ...state,
                 state_tests: action.state_tests,
